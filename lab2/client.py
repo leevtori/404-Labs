@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 import socket
-import sys
 
 #80 is the main http port
 HOST, PORT  = "www.google.com", 80
@@ -34,25 +33,6 @@ def main():
 		if family == socket.AF_INET and sock_type == socket.SOCK_STREAM:
 			print(addr)
 			get_request(addr)
-
-'''data = " ".join(sys.argv[1:])
-
-client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-print("socket sucessfully created")
-
-try: 
-	client.connect((HOST, PORT))
-	print('socket sucessfully connected to google on port ==')
-
-	client.sendall(bytes(data + "\n", "utf-8"))
-	received = client.recv(1024)
-
-finally :
-	client.close()
-
-print("sent	{}".format(data))
-print("received {}".format(received))
-'''
 
 if __name__ == "__main__":
 	main()
